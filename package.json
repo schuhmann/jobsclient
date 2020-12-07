@@ -2,7 +2,6 @@
   "name": "jobsclient",
   "version": "1.0.0",
   "private": true,
-
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -10,7 +9,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/auth-next": "^5.0.0-1607335658.590bfae",
+    "@nuxtjs/axios": "^5.12.3",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6"
   },
