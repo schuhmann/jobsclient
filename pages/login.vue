@@ -58,9 +58,9 @@ export default {
             data: this.form
           })
         } catch (e) {
-
+          console.log(e)
+        //
         }
-
       })
     }
   }

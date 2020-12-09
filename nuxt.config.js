@@ -37,8 +37,20 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth',
+    '@nuxtjs/apollo',
   ],
+
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpLinkOptions: {
+          credentials: 'include',
+        },
+        httpEndpoint: 'http://localhost:8080/jobs/public/graphql',
+      }
+    }
+  },
 
   auth: {
     strategies: {
@@ -46,19 +58,18 @@ export default {
         endpoints: {
           login: {url: '/api/login', method: 'post', propertyName: false},
           logout: {url: '/api/logout', method: 'post'},
-          user: {url: '/api/user', method: 'get', propertyName: false},
+          user: {url: '/api/user', method: 'get', propertyName: false}
         },
         tokenRequired: false,
         tokenType: false
       }
     },
     localStorage: false
-
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: 'http://localhost:8080/jobs/public/',
+    baseURL: 'http://172.26.114.105:8080/jobs/public/',
     credentials: true
 
   },
